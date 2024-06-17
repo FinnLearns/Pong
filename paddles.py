@@ -14,7 +14,7 @@ class Paddle:
 		self.paddle_rect_2 = pygame.Rect(self.settings.right_edge, self.settings.middle_y,
 			self.settings.thickness, self.settings.height)
 
-		self.HORIZONTAL_ACC = 0.1
+		self.VER_ACC = 0.1
 		self.FRICTION = 0.08
 
 		# flags for movement
@@ -32,13 +32,13 @@ class Paddle:
 		self.settings.acc2 = 0
 		
 		if self.up1_flag:
-			self.settings.acc1 = -1 * self.HORIZONTAL_ACC
+			self.settings.acc1 = -1 * self.VER_ACC
 		if self.down1_flag:
-			self.settings.acc1 = self.HORIZONTAL_ACC
+			self.settings.acc1 = self.VER_ACC
 		if self.up2_flag:
-			self.settings.acc2 = -1 * self.HORIZONTAL_ACC
+			self.settings.acc2 = -1 * self.VER_ACC
 		if self.down2_flag:
-			self.settings.acc2 = self.HORIZONTAL_ACC
+			self.settings.acc2 = self.VER_ACC
 
 		# use kinematic equations
 		self.settings.acc1 -= self.settings.vel1 * self.FRICTION
